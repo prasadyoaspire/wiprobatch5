@@ -1,0 +1,170 @@
+DBMS:
+
+  - a software to store and manage the data
+
+RDBMS: 
+
+  - data is stored in the form of tables
+
+  - RDBMS softwares:
+
+              - MySQL, Oracle, Postgres etc...
+
+
+ SQL :
+
+    - a language to talk to the RDBMS 
+
+=======================================================
+
+MySQL : 
+
+   - one of the RDBMS product.
+
+=======================================================
+
+
+mysql> create table customer_tbl(customer_id int,customer_name varchar(50), city varchar(50), email varchar(50),primary key(customer_id));
+
+mysql> insert into customer_tbl values(1111,'Rohit Sharma','Chennai','rohit@tmail.com');
+
+mysql> insert into customer_tbl values(1112,'Vinay Kumar','Pune','vinay@tmail.com');
+
+
+mysql> select * from customer_tbl;
++-------------+---------------+---------+--------------------+
+| customer_id | customer_name | city    | email              |
++-------------+---------------+---------+--------------------+
+|        1111 | Rohit Sharma  | Chennai | rohit@tmail.com    |
+|        1112 | Vinay Kumar   | Pune    | vinay12@gmail.com  |
+|        1113 | Ram Kumar     | Hyd     | ramkumar@tmail.com |
+|        1114 | Sunita Sharma | Pune    | sunita@tmail.com   |
++-------------+---------------+---------+--------------------+
+
+mysql> select * from customer_tbl where city = 'Pune';
++-------------+---------------+------+------------------+
+| customer_id | customer_name | city | email            |
++-------------+---------------+------+------------------+
+|        1112 | Vinay Kumar   | Pune | vinay@tmail.com  |
+|        1114 | Sunita Sharma | Pune | sunita@tmail.com |
++-------------+---------------+------+------------------+
+
+
+mysql> update customer_tbl set email = 'vinay12@gmail.com' where customer_id = 1112;
+
+mysql> delete from customer_tbl where customer_id = 1114;
+
+
+===================================================================
+
+   CRUD = Create, Read, Update and Delete
+
+===================================================================
+
+  Create a table with auto increment:
+
+
+mysql> create table product_tbl (product_id int auto_increment, product_name varchar(30), product_price decimal(10,2),mfd date, category varchar(30), primary key(product_id));
+
+mysql> insert into product_tbl(product_name,product_price,mfd,category) values('SamsungF52',45000.52,'2024-12-26','Mobile');
+
+mysql> insert into product_tbl(product_name,product_price,mfd,category) values('DellVestro',125000.52,'2022-10-30','Laptop');
+
+mysql> insert into product_tbl(product_name,product_price,mfd,category) values('DellXP',145000.52,'2023-10-30','Laptop');
+
+mysql> insert into product_tbl(product_name,product_price,mfd,category) values('IPhone16',95000.52,'2024-10-30','Mobile');
+
+
+> update product_tbl set product_price = 90000.10 where product_id = 4;
+
+> update product_tbl set category = 'SmartPhone' where product_name  = 'IPhone16';
+
+
+======================================
+
+mysql> select sum(product_price) from product_tbl;
+
+mysql> select count(*) from product_tbl;
+
+mysql> select max(product_price) from product_tbl;
+
+mysql> select min(product_price) from product_tbl;
+
+==============================================
+
+mysql> select * from product_tbl order by product_price;
+
+mysql> select * from product_tbl order by product_price desc;
+
+==============================================================
+
+
+mysql> select category,count(*) from product_tbl group by category;
+
+mysql> select category,sum(product_price) from product_tbl group by category;
+
+mysql> select category,min(product_price) from product_tbl group by category;
+
+=====================================================================
+
+Foreign key :
+=========
+
+
+mysql> create table department_tbl (dept_id int,dept_name varchar(20) not null unique, primary key(dept_id));
+
+mysql> insert into department_tbl values(10,'HR');
+
+mysql> insert into department_tbl values(20,'IT');
+
+mysql> insert into department_tbl values(30,'Sales');
+
+mysql> select * from department_tbl;
++---------+-----------+
+| dept_id | dept_name |
++---------+-----------+
+|      10 | HR        |
+|      20 | IT        |
+|      30 | Sales     |
+
+
+mysql> create table employee_tbl (emp_id int auto_increment, emp_name varchar(30),dob date,email varchar(30) unique,deptno int,primary key(emp_id),foreign key (deptno) references department_tbl(dept_id));
+
+mysql> insert into employee_tbl(emp_name,dob,email,deptno) values('Rohit','1999-01-30','rohit@tmail.com',20);
+mysql> insert into employee_tbl(emp_name,dob,email,deptno) values('Jhon','1998-01-30','jhon@tmail.com',10);
+mysql> insert into employee_tbl(emp_name,dob,email,deptno) values('Vishal','2001-01-30','vishal@tmail.com',10);
+
+mysql> select * from employee_tbl;
++--------+----------+------------+------------------+--------+
+| emp_id | emp_name | dob        | email            | deptno |
++--------+----------+------------+------------------+--------+
+|      1 | Rohit    | 1999-01-30 | rohit@tmail.com  |     20 |
+|      2 | Jhon     | 1998-01-30 | jhon@tmail.com   |     10 |
+|      3 | Vishal   | 2001-01-30 | vishal@tmail.com |     10 |
++--------+----------+------------+------------------+--------+
+
+===============================
+
+mysql> show databases;
+
+mysql> use wiprobatch5db;
+Database changed
+
+mysql> show tables;
+
+mysql> desc department_tbl;
+
+mysql> desc employee_tbl;
+
+===================================
+
+  Joins:
+
+mysql> select e.emp_name, d.dept_name from employee_tbl e join department_tbl d on e.deptno = d.dept_id;
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Rohit    | IT        |
+| Jhon     | HR        |
+| Vishal   | HR        |
++----------+-----------+
