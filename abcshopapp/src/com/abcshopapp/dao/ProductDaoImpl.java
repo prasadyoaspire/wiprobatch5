@@ -14,7 +14,22 @@ public class ProductDaoImpl implements ProductDao {
 
 	@Override
 	public void save(Product product) {
-		// TODO Auto-generated method stub
+		
+		String sql = "insert into product_tbl(product_name,product_price,mfd,category) values(?,?,?,?)";
+		try(Connection con = DBUtil.getDBConnection();
+				PreparedStatement ps = con.prepareStatement(sql);) {
+			
+			ps.setString(1, product.getProductName());
+			ps.setDouble(2, product.getProductPrice());
+			ps.setDate(3, null);
+			ps.setString(4, product.getCategory());
+			
+			ps.executeUpdate();
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
 		
 	}
 

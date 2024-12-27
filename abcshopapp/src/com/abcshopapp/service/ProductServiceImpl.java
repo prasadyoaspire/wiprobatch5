@@ -21,9 +21,18 @@ public class ProductServiceImpl implements ProductService  {
 		double orderAmount = totalPrice + (totalPrice* 0.05);
 		
 		return orderAmount;
-					
+		
+			
 		//TO-DO
 		// return invoice object
+	}
+
+	@Override
+	public void addProduct(Product product) {
+		
+		//calling dao to get the product details
+		ProductDao productDao = new ProductDaoImpl();
+		productDao.save(product);
 	}
 
 }
