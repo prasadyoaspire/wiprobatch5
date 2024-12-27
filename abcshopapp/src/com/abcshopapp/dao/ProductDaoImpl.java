@@ -5,6 +5,8 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.abcshopapp.dto.Product;
@@ -28,8 +30,7 @@ public class ProductDaoImpl implements ProductDao {
 		}
 		catch(SQLException e) {
 			e.printStackTrace();
-		}
-		
+		}	
 		
 	}
 
@@ -74,8 +75,40 @@ public class ProductDaoImpl implements ProductDao {
 
 	@Override
 	public List<Product> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<Product> products = new ArrayList<>();
+		
+		String sql = "select * from product_tbl";
+		
+		try(Connection con= DBUtil.getDBConnection();
+				Statement st = con.createStatement();) {
+			
+			ResultSet rs = st.executeQuery(sql);
+			while(rs.next()) {
+				//get the data from ResultSet object
+				int pId = rs.getInt(1);
+				String productName = rs.getString(2);
+				double productPrice = rs.getDouble(3);
+				Date mfd = rs.getDate(4);
+				String category = rs.getString(5);
+				
+				//set the data into product object
+				Product product = new Product();
+				product.setProductId(pId);
+				product.setProductName(productName);
+				product.setProductPrice(productPrice);
+				product.setMfd(null);
+				product.setCategory(category);
+				
+				products.add(product);
+			}		
+			
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return products;
 	}
 
 }

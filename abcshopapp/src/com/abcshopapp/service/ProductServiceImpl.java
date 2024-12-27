@@ -1,5 +1,7 @@
 package com.abcshopapp.service;
 
+import java.util.List;
+
 import com.abcshopapp.dao.ProductDao;
 import com.abcshopapp.dao.ProductDaoImpl;
 import com.abcshopapp.dto.Product;
@@ -33,6 +35,13 @@ public class ProductServiceImpl implements ProductService  {
 		//calling dao to get the product details
 		ProductDao productDao = new ProductDaoImpl();
 		productDao.save(product);
+	}
+
+	@Override
+	public List<Product> getAllProducts() {
+		ProductDao productDao = new ProductDaoImpl();
+		List<Product> products = productDao.findAll();
+		return products;
 	}
 
 }
