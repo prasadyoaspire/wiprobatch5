@@ -1,0 +1,177 @@
+what is java?
+
+=========================
+
+c/c++  - system programming (compiler, driver software etc...)
+
+python - machine learning , AI etc...
+
+where java is used ?
+
+     - application programming ( most preferred to build web based applications)
+
+     - 3 types of applications:
+
+      1. standalone - JSE  ( core java + GUI programming)
+
+      2. web and enterprise application  - JEE
+
+      3. mobile application - JME
+
+==================================================
+
+ JEE :
+
+     - component based
+
+     - there are 2 types of components
+
+         - Web components
+
+             - servlets & jsp
+
+         - Bussiness components
+
+             - Ejb
+
+
+   - All JEE components are container managed components (life cycle of jee components are managed by the container)
+
+   - two types of containers
+
+        - web container (or web server)
+
+                - Tomcat, Jetty
+
+        - application container (or application server)
+            
+                 - Jboss, WebLogic, Webshpere, GlashFish etc
+
+
+ 
+   Web application contains:
+
+         1. html
+         2. CSS
+         3. javascript
+         4. images
+         5. servlets
+         6. jsp
+         7. configuration files (e.g web.xml)
+
+
+   Folder structure need to follow :
+
+     root directory 
+
+       		- *.html
+       		- *.js
+       		- *.css
+       		- WEB-INF
+
+          		- classes
+              			- *.class
+
+          		-lib 
+              			- *.jar
+              
+          		- web.xml
+
+===================================================
+
+   softwares required:
+
+         - jdk
+
+         - tomcat
+
+=======================================================
+
+
+  HTTP : 
+
+   -  communication protocol between client and server on web
+
+   - client send http req and server send http response.
+
+   - IN the server machine we need to install HttpServer to handle request and response
+
+   - HttpServer has a limitation>  It can handle only static content ( static web pages)
+
+   - To generate dynamic content, HttpServer take the help of some other component ( called servlet)
+
+
+  Why servlet?
+
+     - to generate dynamic content
+
+  What is a servlet?
+
+          - Servlet is one of the server side jee component.
+
+          - Servlet is a class written according to servlet api specification
+
+          - servlet api is defined in two packages:
+
+                  1. javax.servelt.*
+
+                  2. javax.servlet.http.*;
+
+           - two types of servlets:
+
+                1. GenericServlet
+
+                2. HttpServlet
+
+
+   How to create a servlet:
+
+   1. create a class which extends HttpServelt
+
+   2. override doGet() or doPost() method
+
+
+==================================
+
+ 1.  doGet vs doPost  :
+
+
+      Get Request: 
+
+          - using for getting something from the server
+
+          - request parameters appending in the URL
+
+           - url length is limited so using get request we can send only limited data
+
+      Post Request:
+
+          - using for saving something on to the server
+
+          - request parameters appending in the body of the request
+
+          -  we can send unlimited date using post request
+
+          - to send sensitive data use post request
+
+
+=====================================================================
+
+  Request Dispatching:
+
+   two mechanisms:
+
+     1. forward
+
+     2. include
+
+
+  
+
+     
+
+
+   
+         	
+
+     

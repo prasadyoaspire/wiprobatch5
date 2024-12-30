@@ -1,0 +1,69 @@
+JSP ( Java Server Pages) 
+
+=========================
+
+  Jsp good at content presentation
+
+  Sevelets are good at content generation
+
+  Jsp page contains:
+
+     1. text
+
+     2. Html
+
+     3. jsp elements 
+
+
+  JSP elements: 
+
+    - 3 types of jsp elements:
+
+       1. scripting elements
+
+            - we are allowed to write java code inside jsp using scripting elements
+
+            - 3 types:
+
+                   1. scriptlet  - <%  your code %>
+
+                   2. expression - <%=  your code %>
+
+                   3. declaration - <%! your code %>
+
+       2. actions
+
+            - 2 types:
+
+                 1. standard actions
+
+                 2. custom actions
+
+       3. directives 
+
+            - 3 types:
+
+                1. page
+
+                2. include 
+
+                3. taglib
+     
+
+==========================================
+
+  Jsp implicit objects:
+
+    1. out
+
+    2. request
+
+    3. response
+
+    4. session
+
+    5. application
+
+     etc....
+   
+
