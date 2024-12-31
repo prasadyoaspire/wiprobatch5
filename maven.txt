@@ -1,0 +1,34 @@
+
+  Maven:
+
+      - build tool and project management tool also
+
+      - automated the build process
+
+
+ what is project building ?
+
+   steps :
+
+     1. create a folder structure
+
+     2. download dependencies and add to the class path
+
+     3. writing source code
+
+     4. compiling the source
+
+     5. unit testing
+
+     6. packaging ( for core java proejcts - demo.jar, for web application - demo.war, for enterprise app - demo.ear)
+
+     7. deployement
+
+
+=============================================================
+
+
+
+
+
+
