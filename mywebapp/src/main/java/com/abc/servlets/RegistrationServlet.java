@@ -28,7 +28,11 @@ public class RegistrationServlet extends HttpServlet {
 		
 		//write your logic - calling service layer method
 		
-				
+		String fullName = fname + " " +lname;	
+		
+		//add this model data to the request object
+		request.setAttribute("myFulllName", fullName);		
+		
 		//for displaying purpose dispatch the request to jsp
 		RequestDispatcher rd = request.getRequestDispatcher("regsuccess.jsp");
 		rd.forward(request, response);		

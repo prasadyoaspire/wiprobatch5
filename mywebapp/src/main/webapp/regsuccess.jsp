@@ -10,12 +10,14 @@
   <h1>Registration Success</h1>
   
   <%
-  String fname = request.getParameter("fname");
-  String lname = request.getParameter("lname");
+/*   String fname = request.getParameter("fname");
+  String lname = request.getParameter("lname"); */
+  
+  String fullName = (String) request.getAttribute("myFulllName");
   
   %>
   
-  <h3>Thank you <%= fname+ " "+lname %></h3>
+  <h3>Thank you <%= fullName %></h3>
   
   
 </body>

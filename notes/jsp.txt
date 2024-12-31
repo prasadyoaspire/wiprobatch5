@@ -33,11 +33,21 @@ JSP ( Java Server Pages)
 
        2. actions
 
+            - you can avoid java code inside jsp.
+
             - 2 types:
 
                  1. standard actions
 
+                      a. <jsp:useBean>
+                      b. <jsp:setProperty>
+                      c. <jsp:getProperty>
+
+
+
                  2. custom actions
+
+           - expression language to avoid java code
 
        3. directives 
 
