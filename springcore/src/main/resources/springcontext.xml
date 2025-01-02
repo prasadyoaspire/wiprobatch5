@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="myProduct" class="com.wipro.springcore.bean.Product">
+		<constructor-arg name="productId" value="20"/>
+		<constructor-arg name="productName" value="NothingPhone"/>
+		<constructor-arg name="productPrice" value="690000"/>
+	</bean>
+	
+	<bean id="emp1" class="com.wipro.springcore.bean.Employee">
+		<property name="empId" value="1001"/>
+		<property name="empName" value="Shalini"/>
+		<property name="email" value="shalini@tmail.com"/>
+		<property name="skills">
+			<list>
+				<value>Core Java</value>
+				<value>Sql</value>
+				<value>Hibernate</value>
+				<value>Spring</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="student1" class="com.wipro.springcore.bean.Student">
+		<property name="studentId" value="1001"/>
+		<property name="studentName" value="Shalini"/>		
+		<property name="marks">
+			<map>
+				<entry key="Maths" value="90"/>
+				<entry key="English" value="75"/>
+				<entry key="Physic" value="85"/>
+				<entry key="Chemistry" value="98"/>				
+			</map>
+		</property>
+	</bean>
+
+</beans>

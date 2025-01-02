@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="msgBean" class="com.wipro.springcore.service.HelloService">  
+		<property name="message" value="Hello, spring says welcome"/>
+	</bean>
+	
+	<bean id="customer1" class="com.wipro.springcore.bean.Customer">
+		<property name="customerId" value="1212"/>
+		<property name="fistName" value="Rohit"/>
+		<property name="lastName" value="Sharma"/>
+		<property name="age" value="35"/>
+	</bean>
+	
+	<bean id="circelBean" class ="com.wipro.springcore.bean.Circle">
+		<property name="radius" value="5"/>
+	</bean>
+	
+	<bean id="triangleBean" class ="com.wipro.springcore.bean.Triangle">
+		<property name="base" value="6"/>
+		<property name="height" value="4"/>
+	</bean>
+	
+	<bean id="shapeServiceBean" class="com.wipro.springcore.service.ShapeServiceImpl">
+		<property name="shape" ref="circelBean"/>
+	</bean>
+
+</beans>
