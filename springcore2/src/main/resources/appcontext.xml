@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"	
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd">
+		
+		<!-- To Enable annotations -->		
+		<context:annotation-config/>
+		
+			
+		<bean id="circleBean" class="com.wipro.springcore2.bean.Circle">
+			<property name="radius" value="5"/>
+		</bean>
+		
+		<bean id="triangleBean" class="com.wipro.springcore2.bean.Triangle">
+			<property name="base" value="5"/>
+			<property name="height" value="6"/>
+		</bean>
+		
+	<!-- 	<bean id="shapeServiceBean" class="com.wipro.springcore2.service.ShapeServiceImpl" autowire="byType">
+			<property name="shape" ref="circleBean"/>
+		</bean>
+ 		 -->
+ 		 
+ 		 <bean id="shapeServiceBean" class="com.wipro.springcore2.service.ShapeServiceImpl">
+			
+		</bean>	 		 
+		
+</beans>		
