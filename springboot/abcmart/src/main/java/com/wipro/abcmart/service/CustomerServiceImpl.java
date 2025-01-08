@@ -52,22 +52,27 @@ public class CustomerServiceImpl implements CustomerService {
 		}		
 		
 		customerRepository.save(customer);		
-		
 		return customer;
 	}
 
 	@Override
 	public void deleteCustomer(int customerId) {
 		
-		Optional<Customer> optionalCustomer = customerRepository.findById(customerId);
-		
+		Optional<Customer> optionalCustomer = customerRepository.findById(customerId);		
 		if(optionalCustomer.isEmpty()) {
 			
 			throw new CustomerNotFoundException("Customer not existing with id:"+customerId);
 		}	
 		
-		Customer customer = optionalCustomer.get();
-		
+		Customer customer = optionalCustomer.get();		
 		customerRepository.delete(customer);		
+	}
+
+	@Override
+	public List<Customer> getCustomersByCity(String city) {
+		
+		List<Customer> customers = customerRepository. findByCity(city);
+			
+		return customers;
 	}	
 }

@@ -166,6 +166,32 @@ where java is used ?
      2. include
 
 
+ Request Redirection:
+
+   - container creates new request to the target resource
+
+    response.sendRedirect("uri");
+
+=====================================================================
+
+
+   Session Management:
+
+
+    - Http protocol is stateless. Server can not remember the client who is sending the request
+
+   - 4 techniques
+
+      1. hidden form fields
+      2. url rewriting
+      3. coockies
+      4. HttpSession
+    
+   
+
+
+
+ 
   
 
      

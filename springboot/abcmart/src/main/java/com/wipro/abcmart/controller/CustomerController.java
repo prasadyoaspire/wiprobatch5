@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wipro.abcmart.entity.Customer;
@@ -52,16 +53,23 @@ public class CustomerController {
 	@PutMapping("/update")
 	public ResponseEntity<Customer> modifyCustomer(@RequestBody Customer customer) {
 		
-		Customer updatedCustomer = customerService.updateCustomer(customer);
-		
+		Customer updatedCustomer = customerService.updateCustomer(customer);		
 		return new ResponseEntity<>(updatedCustomer,HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/delete/{customerId}")
 	public ResponseEntity<Void> removeCustomer(@PathVariable int customerId) {
 		
-		customerService.deleteCustomer(customerId);
-		
+		customerService.deleteCustomer(customerId);		
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
+	@GetMapping("/get")
+	public ResponseEntity<List<Customer>> fetchCustomersByCity(@RequestParam("city") String city) {
+		
+		//call service to get the customers by city
+		List<Customer> customers = customerService.getCustomersByCity(city);
+		
+		return new ResponseEntity<>(customers,HttpStatus.OK);
+	}	
 }

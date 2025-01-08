@@ -15,4 +15,6 @@ public interface CustomerService {
 	Customer updateCustomer(Customer customer);
 	
 	void deleteCustomer(int customerId);
+	
+	List<Customer> getCustomersByCity(String city);
 }
