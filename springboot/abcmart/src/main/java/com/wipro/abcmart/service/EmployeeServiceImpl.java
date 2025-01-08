@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.wipro.abcmart.entity.Department;
 import com.wipro.abcmart.entity.Employee;
+import com.wipro.abcmart.repository.DepartmentRepository;
 import com.wipro.abcmart.repository.EmployeeRepository;
 
 @Service
@@ -15,9 +16,20 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 	@Autowired
 	private EmployeeRepository empRepository;
+	
+	@Autowired
+	private DepartmentRepository deptRepository;
 
 	@Override
-	public Employee saveEmployee(Employee emp) {
+	public Employee saveEmployee(Employee emp,int deptId) {
+				
+		Optional<Department> optionalDept = deptRepository.findById(deptId);		
+		if(optionalDept.isEmpty()) {
+			//throw department not found exception
+		}		
+		Department dept = optionalDept.get();
+		
+		emp.setDept(dept);
 		
 		return empRepository.save(emp);
 	}

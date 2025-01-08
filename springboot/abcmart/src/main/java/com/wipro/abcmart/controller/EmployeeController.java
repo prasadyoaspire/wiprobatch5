@@ -22,10 +22,10 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService empService;
 	
-	@PostMapping("/save")
-	public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
+	@PostMapping("/save/{deptId}")
+	public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee,@PathVariable int deptId) {
 		
-		empService.saveEmployee(employee);	
+		empService.saveEmployee(employee,deptId);	
 		return new ResponseEntity<>(employee,HttpStatus.CREATED);
 	}
 	

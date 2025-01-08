@@ -6,7 +6,7 @@ import com.wipro.abcmart.entity.Employee;
 
 public interface EmployeeService {
 
-	Employee saveEmployee(Employee emp);
+	Employee saveEmployee(Employee emp,int deptId);
 	Employee getEmployeeDetails(int empId);
 	List<Employee> getAllEmployees();
 }
