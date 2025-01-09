@@ -1,0 +1,35 @@
+# Maven
+target/
+*.log
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.tar.bz2
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# IntelliJ IDEA (optional, in case you also use it)
+.idea/
+*.iml
+
+# VS Code (optional, in case you also use it)
+.vscode/
+
+# Other IDE configurations
+.idea/
+*.swp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Maven wrapper
+.mvn/
+mvnw
+mvnw.cmd
