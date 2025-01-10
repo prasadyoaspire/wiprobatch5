@@ -1,8 +1,5 @@
 package com.wipro.wipromart.entity;
 
-import java.time.LocalDate;
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
@@ -28,13 +25,14 @@ public class OrderItem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int orderItemId;
 	
-	private double itemTotal;
-	
+	private double itemTotal;	
 	private int qty;
 	
-	@OneToOne
-	@JoinColumn(name="product_id")
-	private Product product;
+//	@OneToOne
+//	@JoinColumn(name="product_id")
+//	private Product product;
+	
+	private long productId;
 	
 	@JsonIgnore
 	@ManyToOne

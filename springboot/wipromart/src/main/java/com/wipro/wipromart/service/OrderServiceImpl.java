@@ -46,7 +46,9 @@ public class OrderServiceImpl implements OrderService {
 			
 			int qty = oi.getQty();
 			
-			long productId = oi.getProduct().getProductId();
+//			long productId = oi.getProduct().getProductId();
+			
+			long productId = oi.getProductId();
 			
 			//get Product price by productId
 			Product product = productService.getProductById(productId);			
@@ -57,7 +59,8 @@ public class OrderServiceImpl implements OrderService {
 		
 			//update item total in OrderItem
 			oi.setItemTotal(itemTotal);
-			oi.setProduct(product);
+			
+//			oi.setProduct(product);
 			
 			//calculate orderTotal
 			orderTotal = orderTotal + itemTotal;		
