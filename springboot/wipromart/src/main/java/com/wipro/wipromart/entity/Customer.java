@@ -1,10 +1,15 @@
 package com.wipro.wipromart.entity;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
@@ -42,5 +47,9 @@ public class Customer {
 	
 	@Column(length = 30)
 	private String city;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="customer")
+	private List<Order> orders;
 
 }
