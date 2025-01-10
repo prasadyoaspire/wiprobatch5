@@ -17,7 +17,7 @@ public class ProductServiceImpl implements ProductService {
 	private ProductRepository productRepository;
 	
 	@Override
-	public Product saveProduct(Product product) {		
+	public Product saveProduct(Product product) {	
 		productRepository.save(product);		
 		return product;
 	}
@@ -39,6 +39,20 @@ public class ProductServiceImpl implements ProductService {
 	public List<Product> getAllProducts() {
 	
 		return productRepository.findAll();
+	}
+
+	@Override
+	public void deleteProduct(long productId) {
+		
+		Optional<Product> optionalProduct = productRepository.findById(productId);
+		
+		if(optionalProduct.isEmpty()) {		
+			throw new ResourceNotFoundException("Product not found with id: "+productId);
+		}
+				
+		Product product = optionalProduct.get();	
+		
+		productRepository.delete(product);		
 	}
 
 }
