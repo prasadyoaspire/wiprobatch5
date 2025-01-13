@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wipro.wipromart.entity.Customer;
+import com.wipro.wipromart.model.CustomerDto;
 import com.wipro.wipromart.service.CustomerService;
 
 import jakarta.validation.Valid;
@@ -25,23 +25,23 @@ public class CustomerController {
 	private CustomerService customerService;
 	
 	@PostMapping("/save")
-	public ResponseEntity<Customer> addCustomer(@Valid @RequestBody Customer customer) {
+	public ResponseEntity<CustomerDto> addCustomer(@Valid @RequestBody CustomerDto customerDto) {
 		
-		customerService.saveCustomer(customer);		
-		return new ResponseEntity<>(customer,HttpStatus.CREATED);
+		customerService.saveCustomer(customerDto);		
+		return new ResponseEntity<>(customerDto,HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/get/{customerId}")
-	public ResponseEntity<Customer> fetchCustomerById(@PathVariable long customerId) {
+	public ResponseEntity<CustomerDto> fetchCustomerById(@PathVariable long customerId) {
 		
-		Customer customer = customerService.getCustomerById(customerId);	
-		return new ResponseEntity<>(customer,HttpStatus.OK);
+		CustomerDto customerDto = customerService.getCustomerById(customerId);	
+		return new ResponseEntity<>(customerDto,HttpStatus.OK);
 	}
 	
 	@GetMapping("/get/all")
-	public List<Customer> fetchAllCustomers() {
+	public List<CustomerDto> fetchAllCustomers() {
 		
-		List<Customer> customers = customerService.getAllCustomers();
+		List<CustomerDto> customers = customerService.getAllCustomers();
 		return customers;
 	}
 }

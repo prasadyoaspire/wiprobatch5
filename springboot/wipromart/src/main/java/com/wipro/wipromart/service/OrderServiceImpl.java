@@ -36,7 +36,9 @@ public class OrderServiceImpl implements OrderService {
 		long customerId = order.getCustomer().getCustomerId();
 		
 		//using cusomerId get the customer details
-		Customer customer = customerService.getCustomerById(customerId);
+		//Customer customer = customerService.getCustomerById(customerId);
+		
+	    Customer customer = null;
 		
 		List<OrderItem> orderItemList = order.getOrderItems();
 		

@@ -27,7 +27,7 @@ public class Customer {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long customerId;
 	
-	@Pattern(regexp = "[A-Za-z]{5,15}", message = "Please provide valid firstName")
+	//@Pattern(regexp = "[A-Za-z]{5,15}", message = "Please provide valid firstName")
 	
 	@Column(length = 50, nullable = false)
 	private String firstName;
@@ -35,12 +35,12 @@ public class Customer {
 	@Column(length = 50)
 	private String lastName;
 	
-	@Email(message = "Please provide a valid email address")
+	//@Email(message = "Please provide a valid email address")
 	
 	@Column(length = 50, nullable = false, unique = true)
 	private String email;
 
-	@Pattern(regexp = "\\d{10}", message = "Kindly Provide a Valid Mobile number")
+	//@Pattern(regexp = "\\d{10}", message = "Kindly Provide a Valid Mobile number")
 	
 	@Column(length = 10)
 	String mobile;

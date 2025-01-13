@@ -2,13 +2,13 @@ package com.wipro.wipromart.service;
 
 import java.util.List;
 
-import com.wipro.wipromart.entity.Customer;
+import com.wipro.wipromart.model.CustomerDto;
 
 public interface CustomerService {
 
-	Customer saveCustomer(Customer customer);
+	CustomerDto saveCustomer(CustomerDto customerDto);
 	
-	Customer getCustomerById(long customerId);
+	CustomerDto getCustomerById(long customerId);
 	
-	List<Customer> getAllCustomers();
+	List<CustomerDto> getAllCustomers();
 }
