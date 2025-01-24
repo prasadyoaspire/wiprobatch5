@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Array Demo</title>
+    </head>
+    <body>
+        <h2>JavaScript Array Demo</h2>
+        <script>
+
+            var nums = [10,20,30,40,50];
+
+            for(var i=0;i<nums.length;i++) {
+                document.write(nums[i]+"<br>");
+            }
+
+            nums.push(60);
+            nums.push(70);
+            nums.push(80);
+
+            document.write("<br>After Adding Elements <br>");
+            
+            for(var i=0;i<nums.length;i++) {
+                document.write(nums[i]+"<br>");
+            }
+
+            nums.pop();
+            nums.pop();
+
+            document.write("<br>After Deleting Elements <br>");
+            
+            for(var i=0;i<nums.length;i++) {
+                document.write(nums[i]+"<br>");
+            }
+           
+        </script>
+    </body>
+</html>

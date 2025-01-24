@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+    </head>
+    <body>
+        <h2>Registration Form</h2>
+
+        <form>
+            <div>
+                <label>FirstName</label>
+                <input type="text" name="fname" pattern="[A-Za-z]{3,10}"/>
+            </div>
+            <div>
+                <label>LastName</label>
+                <input type="text" name="lname"/>
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password" name="pwd" pattern="[A-Za-z0-9@_#]{5,15}"/>
+            </div>
+            <div>
+                <label>Gender</label>
+                <input type="radio" name="gender" value="male"/> Male
+                <input type="radio" name="gender" value="female"/> Female           
+            </div>
+            <div>
+                <label>DateOfBirth</label>
+                <input type="date" name="dob"/>
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="email" name="email"/>
+            </div>
+            <div>
+                <labe>Country</label>
+                 <select name="country">
+                    <option value="#">--Select--</option>
+                    <option value="India">India</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="US">US</option>    
+                 </select>   
+            </div>
+            <div>
+                <lable>Skill Set</lable>
+                <input type="checkbox" name="myskill" value="java">Java
+                <input type="checkbox" name="myskill" value="sql">SQL <br>
+                <input type="checkbox" name="myskill" value="html">Html
+                <input type="checkbox" name="myskill" value="css">CSS <br>
+                <input type="checkbox" name="myskill" value="javascript">JavaScript
+                <input type="checkbox" name="myskill" value="git">GIT
+            </div>
+
+            <input type="submit"/>
+        </form>
+
+    </body>
+</html>

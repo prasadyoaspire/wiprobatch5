@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo-4</title>
+        <script>
+            function addTwoNums() {
+                
+                var divisions = document.getElementsByTagName("div");
+                
+                var formInputs = document.getElementsByClassName("uinput");
+                var fristElement  = formInputs[0];
+                var secondElement = formInputs[1];
+
+                var x = parseInt(fristElement.value); // value from html text box with name num1
+                var y = parseInt(secondElement.value); // value from html text box with name num2
+                var z = x+y;
+                alert("Result: "+z);
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Event Handling Demo</h2>
+        <form>
+            <div>
+                <label>Enter A value</label>
+                <input type="text" name = "num1" class="uinput"/>
+            </div>
+            <div>
+                <label>Enter B value</label>
+                <input type="text" name = "num2" class="uinput"/>
+            </div>
+            <button onclick="addTwoNums()">Submit</button>
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demo-3</title>
+    <script>
+        function addTwoNums() {
+
+            var n1 = document.loginFrom.num1.value;
+
+            var x = parseInt(document.getElementById("n1").value); // value from html text box with name num1
+            var y = parseInt(document.getElementById("n2").value); // value from html text box with name num2
+            var z = x + y;
+
+            // alert("sum: "+z);
+
+            document.getElementById("result1").innerHTML = "Sum: " + z;
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Event Handling Demo</h2>
+
+    <form name="loginForm">
+
+
+    </form>
+
+    <div>
+        <label>Enter A value</label>
+        <input type="text" name="num1" id="n1" value="0" />
+    </div>
+    <div>
+        <label>Enter B value</label>
+        <input type="text" name="num2" id="n2" value="0" />
+    </div>
+    <button onclick="addTwoNums()">Submit</button>
+
+    <p id="result1">   </p>
+
+</body>
+
+</html>
